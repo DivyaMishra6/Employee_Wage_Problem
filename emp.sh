@@ -1,12 +1,20 @@
 #!/bin/bash
 
-echo "Checking Employee is present or absent"
+#let the present emp is denote the 1
+isPresent=1
 
-res=$(( RANDOM % 2 ))
+#get the random number using RANDOM Variable
+checkRandom=$((RANDOM%2))
 
-if [ $res -eq 1 ]
+#Check the condition and calculate the salary employee is present the daily wage or not 
+if [ $isPresent -eq $checkRandom ]
 then
-	echo "Employee is present"
-else
-	echo "Employee is absent"
+   wagePerHour=20
+   fullDayHour=8
+   empWageSalary=$(($wagePerHour *  $fullDayHour))
+   echo "Employee FullTime Salary is " $empWageSalary
+# emp is absent the daily wage then display 
+else   
+
+    echo "Employee is absent and Salary is zero"
 fi
